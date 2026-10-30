@@ -72,7 +72,20 @@ Manuscript currently under review:
 
 > Early change in serum sodium and subsequent acute kidney injury in acute heart failure: a landmark cohort analysis of MIMIC-IV and eICU. *Under review.*
 
-(Full author list, citation, and DOI will be added upon acceptance.)
+The final bibliographic citation and article DOI will be added upon publication.
+
+## Software citation
+
+The research code is archived on Zenodo:
+
+Shiying Yang. (2026). Early change in serum sodium and subsequent
+acute kidney injury in acute heart failure: analysis code
+(v1.0.0). Zenodo.
+
+https://doi.org/10.5281/zenodo.23812109
+
+GitHub repository:
+https://github.com/yangshiying1119/sodium-change-aki-ahf-mimic-eicu
 
 ## License
 
