@@ -1,4 +1,4 @@
-# Early change in serum sodium and subsequent acute kidney injury in acute heart failure: analysis code
+# Association of 24-hour serum sodium change with subsequent acute kidney injury in critically ill patients with acute heart failure: analysis code
 
 Landmark-cohort analysis of two independent critical-care databases — **MIMIC-IV (v3.1)** and **eICU-CRD (v2.0)** — testing whether the direction of serum sodium change during the first 24 ICU hours is associated with KDIGO-defined AKI over hours 24–72 in patients with acute heart failure. Full methods are reported in the manuscript (see Citation below).
 
@@ -27,6 +27,13 @@ code/
            tables.R / figures.R / figures_cross.R / export.R / i18n.R
                                  output tables and figures
            _run*.R              staged pipeline entry points (_runE* target eICU)
+           cluster_eicu.R / _runEG.R
+                                 hospital-level eICU-CRD clustering and heterogeneity batch
+                                 (requires the raw eICU tables; not part of the prespecified plan)
+           _runRV.R / _runRW.R  supplementary robustness checks reported in the manuscript:
+                                 measurement-interval sensitivity, IPW weight diagnostics,
+                                 eICU calibration, and the still-in-the-ICU-at-72-h analysis;
+                                 both run on the staged extraction/cohort .rds files
            _diag*.R / _probe*.R / _review*.R / _smoke*.R / _sqlcheck*.R / _eicu_recon*.R
                                  development diagnostics and one-off checks, retained for transparency only
 ```
@@ -69,6 +76,8 @@ Access requires completion of the PhysioNet credentialing process and a signed d
 
 7. Unit tests: run `Rscript tests/run_tests.R` from the repository root before anything else. This entry point executes the 69 assertions defined in `code/r/test_common.R` (shared landmark-eligibility and KDIGO logic). A non-zero exit code indicates failure.
 
+8. Supplementary robustness scripts (not part of the main staged pipeline): `_runRV.R` (measurement-interval sensitivity, IPW weight diagnostics, eICU Hosmer–Lemeshow calibration) and `_runRW.R` (primary analysis restricted to patients still in the ICU at the end of the 24–72 h outcome window; manuscript eTable 14) read the staged extraction/cohort `.rds` files written by the pipeline above. Both are self-locating: they resolve their input directory from their own file path, overridable through the `SODIUM_OUT` environment variable. `cluster_eicu.R` (driven by `_runEG.R`) is an optional hospital-heterogeneity batch for eICU-CRD and additionally requires the raw eICU tables via the SQL layer (`30_cohort_eicu.sql` exposes the `hospitalid` column it needs).
+
 Comments inside the scripts are written in Chinese; identifiers and structure are in English.
 
 ## Reproducibility verification
@@ -83,7 +92,7 @@ The full ICD code lists defining the acute heart failure phenotype (broad and ac
 
 Manuscript currently under review:
 
-> Early change in serum sodium and subsequent acute kidney injury in acute heart failure: a landmark cohort analysis of MIMIC-IV and eICU. *Under review.*
+> Association of 24-hour serum sodium change with subsequent acute kidney injury in critically ill patients with acute heart failure: a landmark cohort study using MIMIC-IV and eICU-CRD. *Under review.*
 
 The final bibliographic citation and article DOI will be added upon publication.
 
