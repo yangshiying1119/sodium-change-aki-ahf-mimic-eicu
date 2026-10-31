@@ -56,6 +56,9 @@ SELECT
   p.uniquepid                 AS subject_id,      -- 跨院患者标识
   p.patienthealthsystemstayid AS hadm_id,         -- 本次住院标识
   p.unitvisitnumber,                              -- 本次住院内的第几次 ICU 单元
+  -- 医院标识（2026-10-31 新增，供 cluster_eicu.R 聚类稳健标准误用；
+  -- v1.0.1 归档版无此列，复现聚类分析须连带 r/cluster_eicu.R 与 _runEG.R）
+  p.hospitalid,
   -- 性别归一成 M/F：本库存 'Male'/'Female'，而 r/tables.R 的基线表按水平 'M'
   -- 统计"男性"一行（模型也照此建因子）。不归一的话 eICU 的基线表会把"男性"
   -- 印成 0（0.0%），既不报错也看不出来——两库并排成表时尤其危险。
