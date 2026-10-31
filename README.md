@@ -93,6 +93,10 @@ The research code is archived on Zenodo:
 
 Shiying Yang. (2026). *Early change in serum sodium and subsequent acute kidney injury in acute heart failure: analysis code* (v1.0.1). Zenodo.
 
+Version-specific DOI (v1.0.1):
+https://doi.org/10.5281/zenodo.23830227
+
+Concept DOI (all versions):
 https://doi.org/10.5281/zenodo.23812108
 
 GitHub repository:
