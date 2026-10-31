@@ -91,17 +91,12 @@ The final bibliographic citation and article DOI will be added upon publication.
 
 The research code is archived on Zenodo:
 
-Shiying Yang. (2026). *Early change in serum sodium and subsequent acute kidney injury in acute heart failure: analysis code* (v1.0.0). Zenodo.
-GitHub repository:
+Shiying Yang. (2026). *Early change in serum sodium and subsequent acute kidney injury in acute heart failure: analysis code* (v1.0.1). Zenodo.
 
-https://github.com/yangshiying1119/sodium-change-aki-ahf-mimic-eicu
-Version-specific DOI (v1.0.1):
-https://doi.org/10.5281/zenodo.23830227                                    
-
-Concept DOI (all versions):
-https://doi.org/10.5281/zenodo.23812108                                    
+https://doi.org/10.5281/zenodo.23812108
 
 GitHub repository:
+
 https://github.com/yangshiying1119/sodium-change-aki-ahf-mimic-eicu
 
 ## License
@@ -113,4 +108,3 @@ MIT for code (see LICENSE).
 Shiying Yang — yxs18221189048@163.com · ORCID 0009-0002-4630-7553
 
 This work received no specific funding. Both databases are used under PhysioNet data use agreements; MIMIC-IV was approved for research release by the Institutional Review Board of Beth Israel Deaconess Medical Center with a waiver of informed consent, and eICU-CRD was released under equivalent agreements from its contributing institutions. The ethics statement applicable to these analyses is reported in the manuscript.
-
